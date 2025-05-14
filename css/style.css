@@ -25,7 +25,7 @@ body {
 
 
          header {
-            background-color: f4f4f9;
+            background-color: #f4f4f9;
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -116,3 +116,85 @@ body {
             padding: 1rem 0;
 
         }
+main {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+}
+
+.Défis-Introduction h2 {
+    font-size: 1.8rem;
+    color: #fc6823;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+.Défis-Introduction p {
+    font-size: 1rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+}
+
+.Défis-Liste h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 1rem;
+    border-left: 4px solid #fc6823;
+    padding-left: 0.5rem;
+}
+
+.Défis-Liste ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.Défis-Liste li {
+    background-color: #f4f4f9;
+    border-left: 5px solid #fc6823;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.Défis-Liste li strong {
+    color: #fc6823;
+}
+
+.Défis-Liste a {
+    color: #2c3e50;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.Défis-Graphique h3 {
+    font-size: 1.3rem;
+    margin-top: 3rem;
+    text-align: center;
+    color: #2e2929;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.sources h4 {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    border-left: 4px solid #fc6823;
+    padding-left: 0.5rem;
+    color: #444;
+}
+
+.sources ul {
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.sources li a {
+    color: #fc6823;
+}
