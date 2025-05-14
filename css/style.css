@@ -1,0 +1,118 @@
+
+
+
+
+body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("../img/City.jpg");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+
+         header {
+            background-color: f4f4f9;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            width: 60px;
+            height: 60%;
+
+        }
+        .menu-toggle {
+            position: absolute;
+            right: 0px;
+            top:0px;
+            font-size: 1.8rem;
+            color:#050505;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            z-index: 100;
+            
+        .menu-toggle.active {
+            background: #2c2626;
+
+        }   
+            
+                     
+            
+        }
+        nav ul {
+            list-style: none;
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+
+            background: #fc6823;
+            padding-block: 10px;
+            padding-right: 100px;
+            margin-right: 8px;
+            margin-top: 7px;
+            border-radius: 5px;
+        }
+        nav.active ul {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            margin-right: 150px;
+            text-shadow: 0 0 10px rgba(209, 209, 209, 0.8);
+        }
+        nav a:hover {
+            color: #0b0b0b;
+            
+        }
+        #hero {
+            background-image: url('https://source.unsplash.com/1600x900/?industry,technology');
+            background-size: cover;
+            background-position: center;
+            padding: 10rem 2rem;
+            text-align: center;
+            color: #2e2929;
+        }
+        #hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #fc6823;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .cta-button:hover {
+            background: #16a085;
+        }
+        footer {
+            background-color: #060606;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+
+        }
