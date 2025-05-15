@@ -1,1 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Construis ta ville ODD 9 - Version Avancée</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+    }
+    canvas {
+      background-color: #e0e0e0;
+      border: 2px solid #444;
+      display: block;
+      margin: 20px auto;
+    }
+    .toolbar button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: grab;
+    }
+    .toolbar button:active {
+      cursor: grabbing;
+    }
+    .scores, .population {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Construis ta ville ODD 9 🏙️</h1>
+
+  <div class="toolbar">
+    <p>Glisse un bâtiment sur la grille :</p>
+    <button draggable="true" ondragstart="onDragStart(event, 'usine')">🏭 Usine verte</button>
+    <button draggable="true" ondragstart="onDragStart(event, 'gare')">🚆 Gare</button>
+    <button draggable="true" ondragstart="onDragStart(event, 'culture')">🎭 Centre culturel</button>
+    <button draggable="true" ondragstart="onDragStart(event, 'autoroute')">🛣️ Route</button>
+    <button draggable="true" ondragstart="onDragStart(event, 'parc')">🌳 Parc</button>
+    <button draggable="true" ondragstart="onDragStart(event, 'maison')">🏠 Maison</button>
+    <button draggable="true" ondragstart="onDragStart(event, 'ecole')">🏫 École</button>
+    <button draggable="true" ondragstart="onDragStart(event, 'magasin')">🛒 Magasin</button>
+    <button draggable="true" ondragstart="onDragStart(event, 'medecin')">🧑‍⚕️ Médecin</button>
+  </div>
+
+  <canvas id="gameCanvas" width="600" height="600"></canvas>
+
+  <div class="scores">
+    🌍 Environnement : <span id="env">0</span> |
+    💼 Économie : <span id="eco">0</span> |
+    🤝 Social : <span id="social">0</span> |
+    ⚡ Efficience : <span id="efficience">0%</span>
+  </div>
+
+  <div class="population">
+    👥 Population : <span id="population">0</span> |
+    🍽️ Nourris : <span id="nourris">0</span> |
+    📚 Éduqués : <span id="eduques">0</span> |
+    🏥 Soignés : <span id="soignes">0</span>
+  </div>
+
+  <button onclick="finish()">✅ Terminer ma ville</button>
+
+  <div id="result"></div>
+
+<script>
+  const canvas = document.getElementById("gameCanvas");
+  const ctx = canvas.getContext("2d");
+  const cellSize = 100;
+  const gridSize = 6;
+  const grid = Array.from({ length: gridSize }, () => Array(gridSize).fill(null));
+
+  const scores = { env: 0, eco: 0, social: 0 };
+
+  const buildings = {
+    usine: { icon: "🏭", env: 2, eco: 3, social: -1, workersNeeded: 20 },
+    gare: { icon: "🚆", env: 2, eco: 1, social: 2 },
+    culture: { icon: "🎭", env: 0, eco: 1, social: 3 },
+    autoroute: { icon: "🛣️", env: -2, eco: 3, social: -1 },
+    parc: { icon: "🌳", env: 3, eco: 0, social: 2 },
+    maison: { icon: "🏠", env: 1, eco: 0, social: 2, inhabitants: 4 },
+    ecole: { icon: "🏫", env: 0, eco: 0, social: 3, educates: 40 },
+    magasin: { icon: "🛒", env: 0, eco: 2, social: 1, feeds: 60 },
+    medecin: { icon: "🧑‍⚕️", env: 0, eco: 0, social: 3, heals: 30 }
+  };
+
+  function drawGrid() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for(let y=0; y<gridSize; y++){
+      for(let x=0; x<gridSize; x++){
+        ctx.strokeStyle = "#555";
+        ctx.strokeRect(x*cellSize, y*cellSize, cellSize, cellSize);
+        if(grid[y][x]){
+          ctx.font = "50px Arial";
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText(grid[y][x].icon, x*cellSize + cellSize/2, y*cellSize + cellSize/2);
+        }
+      }
+    }
+  }
+
+  function onDragStart(event, type){
+    event.dataTransfer.setData("buildingType", type);
+  }
+
+  canvas.addEventListener("dragover", e => e.preventDefault());
+
+  canvas.addEventListener("drop", e => {
+    e.preventDefault();
+    const type = e.dataTransfer.getData("buildingType");
+    if(!type) return;
+    const building = buildings[type];
+    const rect = canvas.getBoundingClientRect();
+    const x = Math.floor((e.clientX - rect.left)/cellSize);
+    const y = Math.floor((e.clientY - rect.top)/cellSize);
+    if(x>=0 && x<gridSize && y>=0 && y<gridSize && !grid[y][x]){
+      grid[y][x] = building;
+      drawGrid();
+      updateScores();
+    }
+  });
+
+  function updateScores(){
+    scores.env = 0; scores.eco=0; scores.social=0;
+    let population = 0, nourris = 0, eduques = 0, soignes = 0;
+    for(let y=0; y<gridSize; y++){
+      for(let x=0; x<gridSize; x++){
+        const b = grid[y][x];
+        if(b){
+          scores.env += b.env || 0;
+          scores.eco += b.eco || 0;
+          scores.social += b.social || 0;
+          population += b.inhabitants || 0;
+          nourris += b.feeds || 0;
+          eduques += b.educates || 0;
+          soignes += b.heals || 0;
+        }
+      }
+    }
+
+    document.getElementById("env").textContent = scores.env;
+    document.getElementById("eco").textContent = scores.eco;
+    document.getElementById("social").textContent = scores.social;
+    document.getElementById("population").textContent = population;
+    document.getElementById("nourris").textContent = `${Math.min(nourris, population)}/${population}`;
+    document.getElementById("eduques").textContent = `${Math.min(eduques, population)}/${population}`;
+    document.getElementById("soignes").textContent = `${Math.min(soignes, population)}/${population}`;
+  }
+
+  function getConnectedBuildings(){
+    let visited = Array.from({ length:gridSize }, () => Array(gridSize).fill(false));
+    let connected = Array.from({ length:gridSize }, () => Array(gridSize).fill(false));
+    let stack = [];
+    for(let y=0; y<gridSize; y++){
+      for(let x=0; x<gridSize; x++){
+        if(grid[y][x] && grid[y][x].icon === "🛣️"){
+          stack.push([x,y]);
+          visited[y][x] = true;
+          connected[y][x] = true;
+        }
+      }
+    }
+    while(stack.length > 0){
+      const [x,y] = stack.pop();
+      for(let [nx, ny] of [[x+1,y],[x-1,y],[x,y+1],[x,y-1]]){
+        if(nx>=0 && nx<gridSize && ny>=0 && ny<gridSize){
+          if(grid[ny][nx] && !visited[ny][nx]){
+            if(grid[ny][nx].icon !== "🛣️"){
+              connected[ny][nx] = true;
+            }
+            if(grid[ny][nx].icon === "🛣️" || connected[ny][nx]){
+              visited[ny][nx] = true;
+              stack.push([nx, ny]);
+            }
+          }
+        }
+      }
+    }
+    return connected;
+  }
+
+  function calculateEfficiency(){
+    const connected = getConnectedBuildings();
+    let totalInhabitants = 0;
+    let totalWorkersNeeded = 0;
+    let buildingsCount = 0;
+    let connectedBuildingsCount = 0;
+
+    for(let y=0; y<gridSize; y++){
+      for(let x=0; x<gridSize; x++){
+        const b = grid[y][x];
+        if(b){
+          buildingsCount++;
+          if(b.inhabitants) totalInhabitants += b.inhabitants;
+          if(b.workersNeeded) totalWorkersNeeded += b.workersNeeded;
+          if(connected[y][x]) connectedBuildingsCount++;
+        }
+      }
+    }
+
+    let workForceOk = totalInhabitants >= totalWorkersNeeded;
+    let efficienceRate = buildingsCount ? Math.round((connectedBuildingsCount / buildingsCount)*100) : 0;
+    if(!workForceOk) efficienceRate = Math.max(0, efficienceRate - 20);
+    return efficienceRate;
+  }
+
+  function finish(){
+    updateScores();
+    const efficience = calculateEfficiency();
+    document.getElementById("efficience").textContent = efficience + "%";
+
+    const population = parseInt(document.getElementById("population").textContent);
+    const nourris = parseInt(document.getElementById("nourris").textContent.split("/")[0]);
+    const eduques = parseInt(document.getElementById("eduques").textContent.split("/")[0]);
+    const soignes = parseInt(document.getElementById("soignes").textContent.split("/")[0]);
+
+    let message = "";
+    if(scores.env >= 10 && scores.eco >= 10 && scores.social >= 10 && efficience >= 50 && nourris >= population && eduques >= population && soignes >= population){
+      message = "🏆 Félicitations ! Ta ville est équilibrée, efficiente et durable !";
+    } else {
+      message = "❌ Ta ville n'est pas encore durable. Travaille sur : ";
+      if(scores.env < 10) message += "environnement, ";
+      if(scores.eco < 10) message += "économie, ";
+      if(scores.social < 10) message += "aspect social, ";
+      if(efficience < 50) message += "efficience, ";
+      if(nourris < population) message += "nourriture, ";
+      if(eduques < population) message += "éducation, ";
+      if(soignes < population) message += "santé, ";
+    }
+
+    document.getElementById("result").textContent = message.replace(/, $/, ".");
+  }
+
+  drawGrid();
+</script>
+
+</body>
+</html>
 
