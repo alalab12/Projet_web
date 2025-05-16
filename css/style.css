@@ -23,15 +23,11 @@ body.page-defis {
     background-color: #f2f2f2;
 }
 
-header {
-    background-color: #f4f4f9;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 
 header img {
+    margin-top: 5px;
+    margin-left: 5px;
     width: 60px;
     height: auto;
 }
@@ -214,3 +210,126 @@ body.page-defis .defis-background {
     filter: blur(5px) brightness(0.5);
     z-index: -2;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mini Jeu */
+    body.jeu {
+        background-color: #f4f4f9;
+    }
+
+    
+    .jeu p {
+        text-align: center;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 16px;
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+
+    .jeu h1{
+        text-align: center;
+        color: #fc6823;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bold;
+        font-size: 40px;
+
+    }
+
+    canvas {
+      border: 3px solid #000000;
+      border-radius: 7px;
+      display: block;
+      margin: 20px auto;
+      margin-bottom: 40px;
+    }
+
+
+
+    .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    }
+
+    .toolbar button {
+        border:none;
+        background-color: #f4f4f9;
+        color: rgb(2, 2, 2);
+        border-radius: 5px;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        
+    }
+
+    .toolbar button img{
+        max-width: 80%; 
+        max-height: 80%;
+        object-fit: cover;
+    }
+
+
+    .toolbar button:active {
+      cursor:grab;
+    }
+    .scores, .population  {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+     .scores span, .population span  {
+      margin: 20px;
+    }
+
+    
+
+    #result {
+      margin-top: 20px;
+      margin-bottom: 30px;
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    button.finish {
+        display: flex;
+        justify-content: center;
+        margin:auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        padding: 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        border:none;
+        background-color: #fc6823;
+        color: white;
+        box-shadow: #000000 5px;
+    }
+
+    button.finish:hover {
+        background-color: #f7611b;
+        
+    }
