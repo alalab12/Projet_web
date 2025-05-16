@@ -2,95 +2,121 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Construis ta ville ODD 9 - Version Avancée</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      background-color: #f4f4f4;
-    }
-    canvas {
-      background-color: #e0e0e0;
-      border: 2px solid #444;
-      display: block;
-      margin: 20px auto;
-    }
-    .toolbar button {
-      margin: 5px;
-      padding: 10px;
-      font-size: 16px;
-      cursor: grab;
-    }
-    .toolbar button:active {
-      cursor: grabbing;
-    }
-    .scores, .population {
-      margin: 10px 0;
-      font-size: 18px;
-    }
-    #result {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 20px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Construis ta ville ODD 9 🏙️</h1>
+  <title>Construis ta ville</title>
+  <link rel="stylesheet" href="../css/style.css">
 
+
+</head>
+
+<body class="jeu">
+
+  <header>
+        <img src="../img/logo2.png" alt="ODD9 Logo">
+        
+        <div class="menu-toggle">☰</div>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="defis.html">Défis</a></li>
+                <li><a href="minijeu.html">Mini jeu</a></li>
+                <li><a href="quizz.html">Quizz</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+  <h1>CONSTRUIS TA VILLE</h1>
+  <div class="background-image"></div>
+  <p>Glisse un bâtiment sur la grille</p>
   <div class="toolbar">
-    <p>Glisse un bâtiment sur la grille :</p>
-    <button draggable="true" ondragstart="onDragStart(event, 'usine')">🏭 Usine verte</button>
-    <button draggable="true" ondragstart="onDragStart(event, 'gare')">🚆 Gare</button>
-    <button draggable="true" ondragstart="onDragStart(event, 'culture')">🎭 Centre culturel</button>
-    <button draggable="true" ondragstart="onDragStart(event, 'autoroute')">🛣️ Route</button>
-    <button draggable="true" ondragstart="onDragStart(event, 'parc')">🌳 Parc</button>
-    <button draggable="true" ondragstart="onDragStart(event, 'maison')">🏠 Maison</button>
-    <button draggable="true" ondragstart="onDragStart(event, 'ecole')">🏫 École</button>
-    <button draggable="true" ondragstart="onDragStart(event, 'magasin')">🛒 Magasin</button>
-    <button draggable="true" ondragstart="onDragStart(event, 'medecin')">🧑‍⚕️ Médecin</button>
+    
+    <button draggable="true" ondragstart="onDragStart(event, 'usine')"><img src="../img/usine.png" alt="hopital"></button>
+    <button draggable="true" ondragstart="onDragStart(event, 'route2')"><img src="../img/route2.png" alt="route"></button>
+    <button draggable="true" ondragstart="onDragStart(event, 'route1')"><img src="../img/route1.png" alt="route"></button>
+    <button draggable="true" ondragstart="onDragStart(event, 'parc')"><img src="../img/parc.png" alt="parc"></button>
+    <button draggable="true" ondragstart="onDragStart(event, 'maison')"><img src="../img/house.png" alt="maison"></button>
+    <button draggable="true" ondragstart="onDragStart(event, 'ecole')"><img src="../img/school.png" alt="school"></button>
+    <button draggable="true" ondragstart="onDragStart(event, 'magasin')"  ><img src="../img/magasin.png" alt="magasin"></button>
+    <button draggable="true" ondragstart="onDragStart(event, 'hoptial')" ><img src="../img/hopital.png" alt="hopital"></button>
   </div>
 
   <canvas id="gameCanvas" width="600" height="600"></canvas>
 
   <div class="scores">
-    🌍 Environnement : <span id="env">0</span> |
-    💼 Économie : <span id="eco">0</span> |
-    🤝 Social : <span id="social">0</span> |
-    ⚡ Efficience : <span id="efficience">0%</span>
+    Environnement : <span id="env">0</span> 
+    Économie : <span id="eco">0</span> 
+    Social : <span id="social">0</span> 
+    Efficience : <span id="efficience">0%</span>
   </div>
 
   <div class="population">
-    👥 Population : <span id="population">0</span> |
-    🍽️ Nourris : <span id="nourris">0</span> |
-    📚 Éduqués : <span id="eduques">0</span> |
-    🏥 Soignés : <span id="soignes">0</span>
+    Population : <span id="population">0</span> 
+    Nourris : <span id="nourris">0</span> 
+    Éduqués : <span id="eduques">0</span> 
+    Soignés : <span id="soignes">0</span>
   </div>
 
-  <button onclick="finish()">✅ Terminer ma ville</button>
+  <button class="finish" onclick="finish()"> Terminer ma ville</button>
 
   <div id="result"></div>
+
+  <footer>
+        <p>&copy; 2025 ODD9 - Industrie, Innovation et Infrastructure | Réalisé par Aude LABAT et Lucie Ozgullu
+        </p>
+        <nav>
+            <ul>
+                <li><a href="../html/accueil.html">Accueil</a></li>
+                <li><a href="../html/apropos.html">À propos</a></li>
+                <li><a href="../html/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
 
 <script>
   const canvas = document.getElementById("gameCanvas");
   const ctx = canvas.getContext("2d");
-  const cellSize = 100;
-  const gridSize = 6;
+  const cellSize = 120;
+  const gridSize = 5;
   const grid = Array.from({ length: gridSize }, () => Array(gridSize).fill(null));
 
   const scores = { env: 0, eco: 0, social: 0 };
 
   const buildings = {
-    usine: { icon: "🏭", env: 2, eco: 3, social: -1, workersNeeded: 20 },
-    gare: { icon: "🚆", env: 2, eco: 1, social: 2 },
-    culture: { icon: "🎭", env: 0, eco: 1, social: 3 },
-    autoroute: { icon: "🛣️", env: -2, eco: 3, social: -1 },
-    parc: { icon: "🌳", env: 3, eco: 0, social: 2 },
-    maison: { icon: "🏠", env: 1, eco: 0, social: 2, inhabitants: 4 },
-    ecole: { icon: "🏫", env: 0, eco: 0, social: 3, educates: 40 },
-    magasin: { icon: "🛒", env: 0, eco: 2, social: 1, feeds: 60 },
-    medecin: { icon: "🧑‍⚕️", env: 0, eco: 0, social: 3, heals: 30 }
+    usine: { imgSrc: "../img/usine.png", env: 2, eco: 3, social: -1, workersNeeded: 20 },
+    route2: { imgSrc: "../img/route2.png", env: -2, eco: 3, social: -1 },
+    route1: { imgSrc: "../img/route1.png", env: -1, eco: 1, social: 0 },
+    parc: { imgSrc: "../img/parc.png", env: 3, eco: 0, social: 2 },
+    maison: { imgSrc: "../img/house.png", env: 1, eco: 0, social: 2, inhabitants: 4 },
+    ecole: { imgSrc: "../img/school.png", env: 0, eco: 0, social: 3, educates: 40 },
+    magasin: { imgSrc: "../img/magasin.png", env: 0, eco: 2, social: 1, feeds: 60 },
+    hopital: { imgSrc: "../img/hopital.png", env: 0, eco: 0, social: 3, heals: 30 }
   };
+
+  // Préchargement des images
+  const imagesCache = {};
+  for (const key in buildings) {
+    const img = new Image();
+    img.src = buildings[key].imgSrc;
+    imagesCache[key] = img;
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    toggle.addEventListener('click', function () {
+        nav.classList.toggle('active');
+    });
+
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+        });
+    });
+  });
 
   function drawGrid() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -98,11 +124,15 @@
       for(let x=0; x<gridSize; x++){
         ctx.strokeStyle = "#555";
         ctx.strokeRect(x*cellSize, y*cellSize, cellSize, cellSize);
-        if(grid[y][x]){
-          ctx.font = "50px Arial";
-          ctx.textAlign = "center";
-          ctx.textBaseline = "middle";
-          ctx.fillText(grid[y][x].icon, x*cellSize + cellSize/2, y*cellSize + cellSize/2);
+        const b = grid[y][x];
+        if(b){
+          const type = Object.keys(buildings).find(key => buildings[key] === b);
+          const img = imagesCache[type];
+          if (img.complete) {
+            ctx.drawImage(img, x * cellSize, y * cellSize, cellSize, cellSize);
+          } else {
+            img.onload = () => drawGrid(); // redraw once image is loaded
+          }
         }
       }
     }
@@ -162,7 +192,8 @@
     let stack = [];
     for(let y=0; y<gridSize; y++){
       for(let x=0; x<gridSize; x++){
-        if(grid[y][x] && grid[y][x].icon === "🛣️"){
+        const b = grid[y][x];
+        if(b && (b === buildings.route1 || b === buildings.route2)){
           stack.push([x,y]);
           visited[y][x] = true;
           connected[y][x] = true;
@@ -174,13 +205,9 @@
       for(let [nx, ny] of [[x+1,y],[x-1,y],[x,y+1],[x,y-1]]){
         if(nx>=0 && nx<gridSize && ny>=0 && ny<gridSize){
           if(grid[ny][nx] && !visited[ny][nx]){
-            if(grid[ny][nx].icon !== "🛣️"){
-              connected[ny][nx] = true;
-            }
-            if(grid[ny][nx].icon === "🛣️" || connected[ny][nx]){
-              visited[ny][nx] = true;
-              stack.push([nx, ny]);
-            }
+            visited[ny][nx] = true;
+            connected[ny][nx] = true;
+            stack.push([nx, ny]);
           }
         }
       }
@@ -213,6 +240,20 @@
     return efficienceRate;
   }
 
+  canvas.addEventListener("contextmenu", function(e) {
+  e.preventDefault();
+  const rect = canvas.getBoundingClientRect();
+  const x = Math.floor((e.clientX - rect.left)/cellSize);
+  const y = Math.floor((e.clientY - rect.top)/cellSize);
+  if(x >= 0 && x < gridSize && y >= 0 && y < gridSize && grid[y][x]) {
+    grid[y][x] = null;
+    drawGrid();
+    updateScores();
+  }
+});
+
+
+
   function finish(){
     updateScores();
     const efficience = calculateEfficiency();
@@ -227,7 +268,7 @@
     if(scores.env >= 10 && scores.eco >= 10 && scores.social >= 10 && efficience >= 50 && nourris >= population && eduques >= population && soignes >= population){
       message = "🏆 Félicitations ! Ta ville est équilibrée, efficiente et durable !";
     } else {
-      message = "❌ Ta ville n'est pas encore durable. Travaille sur : ";
+      message = "Ta ville n'est pas encore durable. Travaille sur : ";
       if(scores.env < 10) message += "environnement, ";
       if(scores.eco < 10) message += "économie, ";
       if(scores.social < 10) message += "aspect social, ";
@@ -245,4 +286,3 @@
 
 </body>
 </html>
-
