@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site sur l'ODD9 - Industrie, Innovation et Infrastructure">
+    <title>ODD9 - Industrie, Innovation et Infrastructure</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+</head>
+<body class="quizz-page">
+    <div class="background-image"></div>
+    <header>
+        <img src="../img/logo2.png" alt="ODD9 Logo">
+        <div class="menu-toggle">☰</div>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="defis.html">Défis</a></li>
+                <li><a href="minijeu.html">Mini jeu</a></li>
+                <li><a href="quizz.html">Quizz</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+
+  <div class="quizz-block">
+  <h1>Quel type de bâtisseur es-tu ?</h1>
+  <form id="quizForm">
+
+    <div class="question">
+      <h3>1. Ton outil de rêve ?</h3>
+      <input type="radio" name="q1" id="q1a" value="visionnaire"><label for="q1a">Un crayon, pour dessiner des utopies impossibles</label><br>
+      <input type="radio" name="q1" id="q1b" value="chaos"><label for="q1b">Une dynamite, pour "repenser" la ville à ma façon</label><br>
+      <input type="radio" name="q1" id="q1c" value="philosophe"><label for="q1c">Une truelle, mais uniquement en marbre italien</label><br>
+      <input type="radio" name="q1" id="q1d" value="chef"><label for="q1d">Un mégaphone. Et que ça saute !</label><br>
+    </div>
+
+    <div class="question">
+      <h3>2. Ta philosophie de la construction ?</h3>
+      <input type="radio" name="q2" id="q2a" value="philosophe"><label for="q2a">"On ne construit bien qu’avec le cœur"</label><br>
+      <input type="radio" name="q2" id="q2b" value="visionnaire"><label for="q2b">Des courbes, du verre, du rêve</label><br>
+      <input type="radio" name="q2" id="q2c" value="chef"><label for="q2c">On suit le plan, même s’il est à l’envers</label><br>
+      <input type="radio" name="q2" id="q2d" value="chaos"><label for="q2d">Un rond-point par personne, et vive l’anarchie urbaine</label><br>
+    </div>
+
+    <div class="question">
+      <h3>3. Ton pire cauchemar ?</h3>
+      <input type="radio" name="q3" id="q3a" value="visionnaire"><label for="q3a">Un budget</label><br>
+      <input type="radio" name="q3" id="q3b" value="chaos"><label for="q3b">Une ville où tout est aligné et symétrique</label><br>
+      <input type="radio" name="q3" id="q3c" value="chef"><label for="q3c">Un ouvrier qui me dit "non chef"</label><br>
+      <input type="radio" name="q3" id="q3d" value="philosophe"><label for="q3d">Construire sans réfléchir au sens profond du béton</label><br>
+    </div>
+
+    <div class="question">
+      <h3>4. Ton bâtiment préféré ?</h3>
+      <input type="radio" name="q4" id="q4a" value="chef"><label for="q4a">Un bunker : solide, efficace, pas de chichi</label><br>
+      <input type="radio" name="q4" id="q4b" value="visionnaire"><label for="q4b">Une tour tordue de 600m de haut</label><br>
+      <input type="radio" name="q4" id="q4c" value="philosophe"><label for="q4c">Un temple grec, mais éco-responsable</label><br>
+      <input type="radio" name="q4" id="q4d" value="chaos"><label for="q4d">Un skatepark-labyrinthe qui sert aussi de piscine</label><br>
+    </div>
+
+    <button type="button" onclick="calculateResult()">Voir mon profil de bâtisseur</button>
+  </form>
+
+  <div id="result"></div>
+</div>
+
+<audio id="sound" src="../img/travaux.mp3" preload="auto"></audio>
+
+
+ </body>
+
+    <footer>
+        <p>&copy; 2025 ODD9 - Industrie, Innovation et Infrastructure | Réalisé par Aude LABAT et Lucie Ozgullu
+        </p>
+        <nav>
+            <ul>
+                <li><a href="../html/accueil.html">Accueil</a></li>
+                <li><a href="../html/apropos.html">À propos</a></li>
+                <li><a href="../html/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
