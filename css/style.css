@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -424,4 +425,114 @@ body.page-defis .defis-background {
 
     .form-block button:hover {
       background-color: #f7611b;
+    }
+body.page-solutions {
+    background-color: #f2f2f2;
+}
+
+body.page-solutions main {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+}
+
+body.page-solutions .Solutions-Introduction h2 {
+    font-size: 1.8rem;
+    color: #fc6823;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+body.page-solutions .Solutions-Introduction p {
+    font-size: 1rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+}
+
+body.page-solutions .Solutions-Graphique h3 {
+    font-size: 1.3rem;
+    margin-top: 3rem;
+    text-align: center;
+    color: #2e2929;
+}
+
+body.page-solutions canvas {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+body.page-solutions .sources h4 {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    border-left: 4px solid #fc6823;
+    padding-left: 0.5rem;
+    color: #444;
+}
+
+body.page-solutions .sources ul {
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+}
+
+body.page-solutions .sources li a {
+    color: #fc6823;
+}
+
+body.page-solutions .sources li a:hover {
+    color: #16a085;
+    text-decoration: none;
+}
+
+body.page-solutions .solutions-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/City.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(0.5);
+    z-index: -2;
+}
+
+.chart-container {
+        position: relative;
+        height: 500px;
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .chart-notes {
+        margin-top: 30px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .chart-notes h4 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+    }
+    
+    .chart-notes ol {
+        padding-left: 20px;
+    }
+    
+    .chart-notes li {
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+    
+    .Solutions-Internet {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
