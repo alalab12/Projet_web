@@ -240,3 +240,63 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+
+//Quiz
+
+function calculateResult() {
+    const form = document.getElementById("quizForm");
+    const formData = new FormData(form);
+    const scores = {
+      visionnaire: 0,
+      chaos: 0,
+      philosophe: 0,
+      chef: 0
+    };
+
+    for (let [_, value] of formData.entries()) {
+      if (scores[value] !== undefined) {
+        scores[value]++;
+      }
+    }
+
+    const resultKey = Object.keys(scores).reduce((a, b) =>
+      scores[a] > scores[b] ? a : b
+    );
+
+    const descriptions = {
+      visionnaire: {
+        title: "Architecte Visionnaire",
+        text: "Tu construis avec les étoiles dans les yeux. Ton plus grand ennemi : la gravité.",
+        image: "../img/visionnaire.png"
+      },
+      chaos: {
+        title: "Urbaniste du Chaos",
+        text: "Les ronds-points sont ton terrain de jeu. Tu es le Picasso du plan de ville.",
+        image: "../img/chaos.png"
+      },
+      philosophe: {
+        title: "Maçon Philosophe",
+        text: "Chaque brique est une pensée profonde. Tu poses plus de questions que de béton.",
+        image: "../img/philosophe.png"
+      },
+      chef: {
+        title: "Chef de Chantier Autoritaire",
+        text: "Tu crées des bâtiments… avec ta voix. Tu es le boss, point barre.",
+        image: "../img/chef-chantier.png"
+      }
+    };
+
+    const res = descriptions[resultKey];
+    document.getElementById("result").innerHTML = `
+      <h2>${res.title}</h2>
+      <p>${res.text}</p>
+      <img src="${res.image}" alt="${res.title}">
+    `;
+
+    // jouer le son
+    const sound = document.getElementById("sound");
+    sound.currentTime = 0;
+    sound.play();
+}
