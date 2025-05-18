@@ -333,3 +333,95 @@ body.page-defis .defis-background {
         background-color: #f7611b;
         
     }
+
+
+
+
+
+    /* Contact */
+
+     body.page-contact .contact-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../img/City.jpg");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.6;
+        z-index: -1;
+        }
+
+    .form-block {
+      background: white;
+      padding-top: 20px;
+      padding-left: 50px;
+      padding-right: 65px;
+      padding-bottom: 40px;
+      border-radius: 12px;
+      margin:auto;
+      margin-top: 100px;
+      margin-bottom: 100px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .form-block h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #f7611b;
+    }
+
+    .form-block fieldset {
+      border: none;       
+      padding: 0;
+      margin: 0 0 20px 0; 
+    }
+
+    .form-block legend {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .form-block label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .form-block input, .form-block textarea {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-block input:focus, .form-block
+    textarea:focus {
+      border-color: #f7611b;
+      outline: none;
+    }
+
+    .form-block button {
+      display: block;
+      width: 105%;
+      padding: 12px;
+      background-color: #fa7132;
+      color: white;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-block button:hover {
+      background-color: #f7611b;
+    }
