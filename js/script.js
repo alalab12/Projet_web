@@ -1,3 +1,4 @@
+/* menu toggle */
 document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
@@ -6,21 +7,21 @@ document.addEventListener("DOMContentLoaded", function () {
         nav.classList.toggle('active');
     });
 
-    // Fermer le menu quand on clique sur un lien
     document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', () => {
             nav.classList.remove('active');
         });
     });
 });
+
+/* graphique co2 */
 document.addEventListener("DOMContentLoaded", function () {
-    
     const ctxCO2 = document.getElementById('co2Chart').getContext('2d');
     new Chart(ctxCO2, {
         type: 'bar',
         data: {
             labels: ['Monde', 'Chine', 'États-Unis', 'UE à 27', 'France'],
-            datasets: [
+            datasets: [ 
                 {
                     label: "Production d'électricité",
                     data: [41, 52, 36, 31, 12],
@@ -54,22 +55,22 @@ document.addEventListener("DOMContentLoaded", function () {
             ]
         },
         options: {
-            responsive: true,
+            responsive: true, 
             plugins: {
                 title: {
-                    display: false
+                    display: false 
                 },
                 legend: {
                     position: 'top'
                 },
                 tooltip: {
-                    mode: 'index',
-                    intersect: false
+                    mode: 'index', 
+                    intersect: false 
                 }
             },
             scales: {
                 x: {
-                    stacked: true
+                    stacked: true 
                 },
                 y: {
                     stacked: true,
@@ -84,10 +85,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+/* graphique d'accès à internet */
 document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('internetAccessPieChart')) {
         const internetPieCtx = document.getElementById('internetAccessPieChart').getContext('2d');
-        
         const internetAccessPieChart = new Chart(internetPieCtx, {
             type: 'pie',
             data: {
@@ -102,12 +103,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 datasets: [{
                     data: [85, 68, 72, 42, 63, 28],
                     backgroundColor: [
-                        '#1f77b4', // Bleu foncé
-                        '#17becf', // Bleu clair
-                        '#2ca02c', // Vert
-                        '#ff7f0e', // Orange
-                        '#d62728', // Rouge
-                        '#9467bd'  // Violet
+                        '#1f77b4',
+                        '#17becf', 
+                        '#2ca02c', 
+                        '#ff7f0e', 
+                        '#d62728', 
+                        '#9467bd' 
                     ],
                     borderColor: '#ffffff',
                     borderWidth: 1
@@ -155,10 +156,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+/* graphique des obligations durables */
 document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('bondsBarChart')) {
         const bondsCtx = document.getElementById('bondsBarChart').getContext('2d');
-        
         const bondsBarChart = new Chart(bondsCtx, {
             type: 'bar',
             data: {
@@ -243,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-//Quiz
+// quiz
 
 function calculateResult() {
     const form = document.getElementById("quizForm");
@@ -301,8 +302,7 @@ function calculateResult() {
     sound.play();
 }
 
-
-// Script pour afficher les lignes de détail
+// détails des lignes du tableau
 function toggleRow(row) {
   const next = row.nextElementSibling;
   if (next && next.classList.contains('details')) {
@@ -310,10 +310,12 @@ function toggleRow(row) {
   }
 }
 
-// Convertir les attributs data-stars en animation dynamique
+// convertir les étoiles en animation dynamique 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-stars]").forEach(cell => {
     const stars = parseInt(cell.getAttribute("data-stars"));
     cell.style.setProperty('--stars', stars);
   });
 });
+
+
