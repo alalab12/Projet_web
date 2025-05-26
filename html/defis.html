@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Site sur l'ODD9 - Industrie, Innovation et Infrastructure">
     <title>ODD9 - Industrie, Innovation et Infrastructure</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../js/script.js"></script>
-</head>  
+    <link rel="stylesheet" href="../css/style.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    <script src="../js/script.js"></script> 
+</head>
 <body class="page-defis">
     <div class="defis-background"></div>
+
     <header>
-        <img src="../img/logo2.png" alt="ODD9 Logo">
-        <div class="menu-toggle">☰</div>
+        <img src="../img/logo2.png" alt="ODD9 Logo"> 
+        <div class="menu-toggle">☰</div> 
         <nav>
             <ul>
                 <li><a href="accueil.html">Accueil</a></li>
@@ -25,12 +26,14 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-    </header>  
+    </header>
+
     <main>
         <section class="Défis-Introduction">
             <h2>ODD9-Mettre en place une infrastructure résiliente, promouvoir une industrialisation durable qui profite à tous et encourager l'innovation</h2>
-            <p>Le neuvième objectif de développement durable (ODD) promeut l’essor résilient et durable d’infrastructures, de l’industrialisation et de l’innovation.<br> Ces secteurs doivent en effet être un moteur pour le recul de la pauvreté et l’amélioration de la qualité de vie dans le monde, tout en ayant un impact mineur sur l’environnement. L’ODD9 appelle à favoriser un appui financier, technologique et technique des industries et en encourageant l’innovation et la recherche scientifique. </p>
+            <p>Le neuvième objectif de développement durable (ODD) promeut l’essor résilient et durable d’infrastructures, de l’industrialisation et de l’innovation. Ces secteurs doivent en effet être un moteur pour le recul de la pauvreté et l’amélioration de la qualité de vie dans le monde, tout en ayant un impact mineur sur l’environnement. L’ODD9 appelle à favoriser un appui financier, technologique et technique des industries et en encourageant l’innovation et la recherche scientifique.</p>
         </section>
+
         <section class="Défis-Liste">
             <h3>Défis majeurs à relever :</h3>
             <ul>
@@ -56,102 +59,109 @@
                 </li>
             </ul>
         </section>
+
         <section class="Défis-Carte">
             <h3>Niveau d’innovation et d’infrastructure dans le monde :</h3>
-            <img src="../img/graphique-co2.png" alt="Carte des scores GCI par pays" style="max-width:100%; height:auto;">
+            <div class="img-container">
+                <img id="graphique" src="../img/graphique-co2.png" alt="Carte des scores GCI par pays">
+            </div>
             <p>La carte ci-dessus illustre les scores GCI (Global Competitiveness Index), qui mesurent la capacité des pays à innover et à développer des infrastructures. On distingue trois catégories : Starters, Adopters et Frontrunners.</p>
         </section>
+
         <section class="Défis-Graphique">
             <h3>Émissions de CO₂ par secteur (%) :</h3>
             <canvas id="co2Chart" width="600" height="400"></canvas>
             <p>Ce graphique présente la répartition des émissions de CO₂ selon les secteurs principaux pour le monde, la Chine, les États-Unis, l’Union européenne et la France.</p>
         </section>
+
         <section class="defis-ranking">
-  <h3>Comparatif de l'effort d'innovation et d'infrastructure par pays</h3>
-  <table class="rank-table">
-    <thead>
-      <tr>
-        <th>Pays</th>
-        <th>Innovation</th>
-        <th>Infrastructure</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr onclick="toggleRow(this)">
-        <td>🇫🇷 France</td>
-        <td data-stars="4"></td>
-        <td data-stars="4"></td>
-      </tr>
-      <tr class="details"><td colspan="3">Forte concentration de startups, mais défis sur les infrastructures numériques rurales.</td></tr>
+            <h3>Comparatif de l'effort d'innovation et d'infrastructure par pays</h3>
+            <table class="rank-table">
+                <thead>
+                    <tr>
+                        <th>Pays</th>
+                        <th>Innovation</th>
+                        <th>Infrastructure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="toggleRow(this)">
+                        <td>France</td>
+                        <td data-stars="4"></td>
+                        <td data-stars="4"></td>
+                    </tr>
+                    <tr class="details"><td colspan="3">Forte concentration de startups, mais défis sur les infrastructures numériques rurales.</td></tr>
 
-      <tr onclick="toggleRow(this)">
-        <td>🇨🇳 Chine</td>
-        <td data-stars="5"></td>
-        <td data-stars="5"></td>
-      </tr>
-      <tr class="details"><td colspan="3">Investissements massifs en IA, infrastructures ultra-rapides.</td></tr>
+                    <tr onclick="toggleRow(this)">
+                        <td>Chine</td>
+                        <td data-stars="5"></td>
+                        <td data-stars="5"></td>
+                    </tr>
+                    <tr class="details"><td colspan="3">Investissements massifs en IA, infrastructures ultra-rapides.</td></tr>
 
-      <tr onclick="toggleRow(this)">
-        <td>🇺🇸 États-Unis</td>
-        <td data-stars="5"></td>
-        <td data-stars="4"></td>
-      </tr>
-      <tr class="details"><td colspan="3">Leader en innovation technologique, mais certaines zones rurales sont moins couvertes.</td></tr>
+                    <tr onclick="toggleRow(this)">
+                        <td>États-Unis</td>
+                        <td data-stars="5"></td>
+                        <td data-stars="4"></td>
+                    </tr>
+                    <tr class="details"><td colspan="3">Leader en innovation technologique, mais certaines zones rurales sont moins couvertes.</td></tr>
 
-      <tr onclick="toggleRow(this)">
-        <td>🇩🇪 Allemagne</td>
-        <td data-stars="4"></td>
-        <td data-stars="5"></td>
-      </tr>
-      <tr class="details"><td colspan="3">Excellence industrielle et infrastructure robuste.</td></tr>
+                    <tr onclick="toggleRow(this)">
+                        <td>Allemagne</td>
+                        <td data-stars="4"></td>
+                        <td data-stars="5"></td>
+                    </tr>
+                    <tr class="details"><td colspan="3">Excellence industrielle et infrastructure robuste.</td></tr>
 
-      <tr onclick="toggleRow(this)">
-        <td>🇮🇳 Inde</td>
-        <td data-stars="3"></td>
-        <td data-stars="2"></td>
-      </tr>
-      <tr class="details"><td colspan="3">Fort potentiel en tech, mais infrastructures en retard.</td></tr>
+                    <tr onclick="toggleRow(this)">
+                        <td>Inde</td>
+                        <td data-stars="3"></td>
+                        <td data-stars="2"></td>
+                    </tr>
+                    <tr class="details"><td colspan="3">Fort potentiel en tech, mais infrastructures en retard.</td></tr>
 
-      <tr onclick="toggleRow(this)">
-        <td>🇧🇷 Brésil</td>
-        <td data-stars="3"></td>
-        <td data-stars="3"></td>
-      </tr>
-      <tr class="details"><td colspan="3">Bonne dynamique d’innovation mais besoin de modernisation des infrastructures.</td></tr>
+                    <tr onclick="toggleRow(this)">
+                        <td>Brésil</td>
+                        <td data-stars="3"></td>
+                        <td data-stars="3"></td>
+                    </tr>
+                    <tr class="details"><td colspan="3">Bonne dynamique d’innovation mais besoin de modernisation des infrastructures.</td></tr>
 
-      <tr onclick="toggleRow(this)">
-        <td>🇯🇵 Japon</td>
-        <td data-stars="5"></td>
-        <td data-stars="4"></td>
-      </tr>
-      <tr class="details"><td colspan="3">Haute technologie et innovation forte, infrastructures vieillissantes dans certaines zones.</td></tr>
+                    <tr onclick="toggleRow(this)">
+                        <td>Japon</td>
+                        <td data-stars="5"></td>
+                        <td data-stars="4"></td>
+                    </tr>
+                    <tr class="details"><td colspan="3">Haute technologie et innovation forte, infrastructures vieillissantes dans certaines zones.</td></tr>
 
-      <tr onclick="toggleRow(this)">
-        <td>🇿🇦 Afrique du Sud</td>
-        <td data-stars="2"></td>
-        <td data-stars="2"></td>
-      </tr>
-      <tr class="details"><td colspan="3">Des inégalités fortes limitent l’accès aux infrastructures modernes.</td></tr>
+                    <tr onclick="toggleRow(this)">
+                        <td>Afrique du Sud</td>
+                        <td data-stars="2"></td>
+                        <td data-stars="2"></td>
+                    </tr>
+                    <tr class="details"><td colspan="3">Des inégalités fortes limitent l’accès aux infrastructures modernes.</td></tr>
 
-      <tr onclick="toggleRow(this)">
-        <td>🇰🇷 Corée du Sud</td>
-        <td data-stars="5"></td>
-        <td data-stars="5"></td>
-      </tr>
-      <tr class="details"><td colspan="3">Pionnière en 5G, automatisation, et innovation numérique.</td></tr>
+                    <tr onclick="toggleRow(this)">
+                        <td>Corée du Sud</td>
+                        <td data-stars="5"></td>
+                        <td data-stars="5"></td>
+                    </tr>
+                    <tr class="details"><td colspan="3">Pionnière en 5G, automatisation, et innovation numérique.</td></tr>
 
-      <tr onclick="toggleRow(this)">
-        <td>🇸🇪 Suède</td>
-        <td data-stars="4"></td>
-        <td data-stars="4"></td>
-      </tr>
-      <tr class="details"><td colspan="3">Très haut niveau d'innovation avec un réseau numérique étendu.</td></tr>
-    </tbody>
-  </table>
-</section>
+                    <tr onclick="toggleRow(this)">
+                        <td>Suède</td>
+                        <td data-stars="4"></td>
+                        <td data-stars="4"></td>
+                    </tr>
+                    <tr class="details"><td colspan="3">Très haut niveau d'innovation avec un réseau numérique étendu.</td></tr>
+                </tbody>
+            </table>
+        </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 ODD9 - Industrie, Innovation et Infrastructure | Réalisé par Aude LABAT et Lucie Ozgullu
-        </p>
+        <p>&copy; 2025 ODD9 - Industrie, Innovation et Infrastructure | Réalisé par Aude LABAT et Lucie Ozgullu</p>
     </footer>
+
+</body>
 </html>
