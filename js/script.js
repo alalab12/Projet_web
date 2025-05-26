@@ -301,3 +301,19 @@ function calculateResult() {
     sound.play();
 }
 
+
+// Script pour afficher les lignes de détail
+function toggleRow(row) {
+  const next = row.nextElementSibling;
+  if (next && next.classList.contains('details')) {
+    next.style.display = next.style.display === 'table-row' ? 'none' : 'table-row';
+  }
+}
+
+// Convertir les attributs data-stars en animation dynamique
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-stars]").forEach(cell => {
+    const stars = parseInt(cell.getAttribute("data-stars"));
+    cell.style.setProperty('--stars', stars);
+  });
+});
