@@ -1,12 +1,13 @@
-
+/* Style global */
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0;
+    margin: 0; 
     color: #333;
     line-height: 1.6;
     position: relative;
 }
 
+/* Page d'accueil */
 body.page-accueil .background-image {
     position: absolute;
     top: 0;
@@ -23,8 +24,6 @@ body.page-accueil .background-image {
 body.page-defis {
     background-color: #f2f2f2;
 }
-
-
 
 header img {
     margin-top: 5px;
@@ -112,6 +111,7 @@ footer {
     padding: 1rem 0;
 }
 
+/* Page des défis */
 body.page-defis main {
     padding: 2rem;
     max-width: 1000px;
@@ -212,23 +212,7 @@ body.page-defis .defis-background {
     z-index: -2;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Mini Jeu */
+/* Page du mini jeu */
     body.jeu {
         background-color: #f4f4f9;
     }
@@ -339,7 +323,7 @@ body.page-defis .defis-background {
 
 
 
-    /* Contact */
+    /* Page du contact */
 
          body.page-contact .contact-background {
         position: absolute;
@@ -426,6 +410,8 @@ body.page-defis .defis-background {
     .form-block button:hover {
       background-color: #f7611b;
     }
+
+/* page des solutions */
 body.page-solutions {
     background-color: #f2f2f2;
 }
@@ -539,87 +525,9 @@ body.page-solutions .solutions-background {
 
 
 
-/* quizz */
 
-    .quizz-block {
-        margin:20px;
-    }
 
-    .quizz-block .container {
-      max-width: 800px;
-      margin: auto;
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      border: 5px dashed #ff8b1f;
-    }
-
-    .quizz-block h1 {
-      text-align: center;
-      color: #222;
-    }
-
-    .quizz-block .question {
-      margin-bottom: 20px;
-    }
-
-    .quizz-block  .question h3 {
-      margin-bottom: 10px;
-    }
-
-    .quizz-block  label {
-      display: block;
-      margin-bottom: 10px;
-      padding: 10px;
-      border-radius: 8px;
-      background: #f5f5f5;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-    .quizz-block  input[type="radio"] {
-      display: none;
-    }
-
-    .quizz-block  input[type="radio"]:checked + label {
-      background-color: #ff8800;
-    }
-
-    .quizz-block  button {
-      display: flex;
-      font-size: 16px;
-      margin:auto;
-      margin-top: 20px;
-      padding: 20px;
-      background: #ff830f;
-      border: none;
-      border-radius: 12px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .quizz-block  button:hover {
-      background: #fc9110;
-    }
-
-    .quizz-block  #result {
-      margin-top: 30px;
-      padding: 20px;
-      background: #fdf6f6;
-      border-radius: 12px;
-      font-size: 1.1em;
-      text-align: center;
-    }
-
-    .quizz-block  #result img {
-      max-width: 300px;
-      margin-top: 20px;
-      border-radius: 10px;
-    }
-
-   /*tableau*/
+    /*tableau*/
 
 .defis-ranking {
   margin-top: 4rem; 
@@ -631,7 +539,7 @@ body.page-solutions .solutions-background {
 
 .rank-table {
   width: 100%; 
-  border-collapse: collapse; /* Supprime l'espacement entre les cellules */
+  border-collapse: collapse; 
   font-size: 1rem; 
 }
 
@@ -656,8 +564,7 @@ body.page-solutions .solutions-background {
   display: none; 
   background-color: #fff7f0; 
   font-style: italic; 
-  animation: fadeIn 0.5s ease-in; /* Animation douce lors de l’affichage */
-}
+  animation: fadeIn 0.5s ease-in; }
 
 .rank-table .details td {
   padding: 1rem; 
@@ -676,3 +583,149 @@ body.page-solutions .solutions-background {
   animation: shimmer 2s infinite alternate ease-in-out; /* Effet scintillant */
 }
 
+
+/* page à propos*/
+
+body.about-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+body.about-page .apropos-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/City.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(0.5);
+    z-index: -2;
+}
+
+body.about-page h1 {
+    padding-bottom: 40px;
+    text-align: center;
+    color: #fc6823;
+}
+
+body.about-page h2 {
+    font-size: 1.8rem;
+    border-bottom: 3px solid #000000;
+    padding-bottom: 6px;
+    margin-top: 40px;
+    color: #fc6823;
+}
+
+body.about-page p {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1rem;
+}
+
+body.about-page section {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    background-color: white;
+    padding: 25px 30px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+body.about-page ul.list {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+    color: #444;
+}
+
+body.about-page ul.list ul {
+    list-style-type: circle;
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+body.about-page ul.list li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+body.about-page strong {
+    color: #000000;
+}
+
+.img-container {
+    max-width: 100%; 
+    display: flex;
+    justify-content: center; 
+    overflow: hidden; /* Assure que rien ne dépasse du conteneur */
+}
+
+#graphique {
+    width: 100%; 
+    max-width: 800px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+
+.page-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Créer une grille flexible */
+    gap: 20px;
+    padding: 20px;
+}
+
+.page-block {
+    background-color: #fff; 
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease; /* Effet au survol */
+    text-align: center;
+    padding: 15px;
+}
+
+.page-block:hover {
+    transform: translateY(-5px); /* Effet d'élévation au survol */
+}
+
+.page-block img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* L'image prend toute la place sans être déformée */
+    border-radius: 8px;
+}
+
+.page-block h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #fc6823; 
+}
+
+.page-block p {
+    font-size: 1rem;
+    color: #333; 
+    margin: 10px 0;
+}
+
+.block-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fc6823;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.block-link:hover {
+    background-color: #f7611b;
+}
