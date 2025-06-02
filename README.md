@@ -13,7 +13,6 @@ Le site propose une expérience interactive et ludique pour :
 2. Une page "solutions" avec : présentations des solutions concrètes pour répondre aux enjeux de l’ODD9, graphique circulaire sur l’accès à Internet par région et bar chart sur les financements durables via les obligations vertes/sociales.
 3. Une page "défis" avec : explication des défis mondiaux liés à l’infrastructure et à l’innovation, graphique empilé sur les émissions de CO₂ par secteur/pays et tableau interactif comparant plusieurs pays selon leur niveau d’innovation et d’infrastructure.
 4. Une page "minijeu" où l'utilisateur construit une ville en glissant-déposant des bâtiments. Le but est d'atteindre des scores équilibrés (environnement, économie, social).
-Mini-jeu interactil’utilisateur construit une ville en glissant-déposant des bâtiments,
 5. Une page "quizz" pour découvrir son profil de bâtisseur avec : affichage dynamique du résultat (avec image et audio).
 6. Une page "apropos" avec : présentation du contexte du projet et répartition des tâches entre les membres du groupe.
 7. Une page "contact" avec : formulaire de contact pour recueillir des messages utilisateurs.
